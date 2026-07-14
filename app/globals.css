@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --foreground-rgb: 15, 14, 12;
+  --background-rgb: 245, 240, 232;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+}
+
+.drop-cap::first-letter {
+  font-family: var(--font-playfair);
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  margin-right: 0.12em;
+  margin-top: 0.08em;
+  color: #8b6914;
+  font-weight: 700;
+}
+
+.ornament {
+  text-align: center;
+  color: #8b6914;
+  letter-spacing: 0.5em;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+@layer components {
+  .sidenote {
+    @apply text-sm text-ink-400 italic border-l-2 border-accent/30 pl-4 my-4;
+  }
+  .section-label {
+    @apply text-xs font-mono tracking-[0.2em] uppercase text-accent font-medium;
+  }
+  .pillar-h2 {
+    @apply font-serif text-3xl md:text-4xl font-normal text-ink-950 leading-tight mt-16 mb-6;
+  }
+  .pillar-h3 {
+    @apply font-serif text-xl md:text-2xl font-normal text-ink-800 leading-snug mt-10 mb-4 italic;
+  }
+  .pillar-p {
+    @apply text-ink-800 leading-relaxed text-[1.0625rem] md:text-lg mb-6;
+  }
+  .layer-card {
+    @apply bg-parchment-100 border border-parchment-300 rounded-sm p-5 md:p-6;
+  }
+}
